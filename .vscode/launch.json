@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "API - Debug",
+            "type": "node",
+            "request": "launch",
+            "preLaunchTask": "Compile-Watch",
+            "runtimeExecutable": "node",
+            "runtimeArgs": ["--inspect-brk=127.0.0.1:9223", "./build/server.js", "--nolazy"],
+            "port": 9223,
+            "restart": true,
+            "outFiles": ["${workspaceFolder}/build/**/*.js"],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "skipFiles": ["node_modules/**/*.js", "lib/**/*.js"],
+            "env": {
+                "NODE_ENV": "development",
+                "PORT": "4000"
+            }
+        }
+    ]
+}
